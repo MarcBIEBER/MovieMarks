@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        switch viewRouter.currentPage {
+        case .splashScreen:
+            SplashScreenView()
+        case .getStarted:
+            GetStarted()
         }
-        .padding()
     }
 }
 

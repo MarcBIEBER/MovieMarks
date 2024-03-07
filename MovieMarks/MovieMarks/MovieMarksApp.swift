@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MovieMarksApp: App {
+    @StateObject var viewRouter = ViewRouter()
+
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            ContentView()
+                .environmentObject(viewRouter)
         }
     }
 }

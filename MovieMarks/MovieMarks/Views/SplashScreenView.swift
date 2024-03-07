@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
     @State private var logoPosition = 0.0
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -24,21 +26,12 @@ struct SplashScreenView: View {
                 .offset(y: logoPosition)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                switchToGetStarted()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                withAnimation {
+                    viewRouter.currentPage = .getStarted
+                }
             }
         }
     }
-    
-    func switchToGetStarted() {
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                   let sceneDelegate = windowScene.delegate as? SceneDelegate,
-                   let window = sceneDelegate.window {
-                    window.rootViewController = UIHostingController(rootView: GetStarted())
-                }
-    }
 }
 
-#Preview {
-    SplashScreenView()
-}
