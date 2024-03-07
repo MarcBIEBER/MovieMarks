@@ -7,16 +7,21 @@
 
 import SwiftUI
 
-struct GetStarted: View {
+struct GetStartedView: View {
     var body: some View {
         ZStack {
             Color("BackgroundColor")
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("Logo")
-                    .resizable()
-                    .scaledToFit()
-                
+                GeometryReader { geometry in
+                    VStack {
+                        Image("Logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: LogoConstants.logoWidth, height: LogoConstants.logoHeight)
+                            .offset(y: 32 - geometry.safeAreaInsets.top)
+                    }
+                }
                 Spacer()
                 
                 VStack {
@@ -67,5 +72,5 @@ struct GetStarted: View {
 }
 
 #Preview {
-    GetStarted()
+    GetStartedView()
 }

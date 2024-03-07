@@ -7,7 +7,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Créer une vue SwiftUI que vous souhaitez utiliser comme vue principale.
-        let contentView = GetStarted()
+        let contentView = GetStartedView()
 
         // Utiliser un UIHostingController comme fenêtre pour une vue SwiftUI.
         if let windowScene = scene as? UIWindowScene {

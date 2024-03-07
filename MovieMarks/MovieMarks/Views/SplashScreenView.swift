@@ -15,15 +15,21 @@ struct SplashScreenView: View {
         ZStack {
             Color("BackgroundColor")
                 .edgesIgnoringSafeArea(.all)
-            Image("Logo")
-                .resizable()
-                .scaledToFit()
-                .onAppear {
-                    withAnimation(.easeIn(duration: 1.0)) {
-                        logoPosition -= 100
-                    }
+            GeometryReader { geometry in
+                VStack {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: LogoConstants.logoWidth, height: LogoConstants.logoHeight)
+                        .offset(y: logoPosition)
+                        .onAppear {
+                            logoPosition = (geometry.size.height / 2) - (LogoConstants.logoHeight / 2) - geometry.safeAreaInsets.top
+                            withAnimation(.easeIn(duration: 1.0)) {
+                                logoPosition = 32 - geometry.safeAreaInsets.top
+                            }
+                        }
                 }
-                .offset(y: logoPosition)
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
