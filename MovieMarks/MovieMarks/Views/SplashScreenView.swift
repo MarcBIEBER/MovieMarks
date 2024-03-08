@@ -13,7 +13,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Color("BackgroundColor")
+            Color("BackgroundColor1")
                 .edgesIgnoringSafeArea(.all)
             GeometryReader { geometry in
                 VStack {

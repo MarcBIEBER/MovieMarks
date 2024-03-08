@@ -16,6 +16,8 @@ struct ContentView: View {
             SplashScreenView()
         case .getStarted:
             GetStartedView()
+        case .mainView:
+            MainView()
         }
     }
 }

@@ -14,4 +14,5 @@ class ViewRouter: ObservableObject {
 enum Page {
     case splashScreen
     case getStarted
+    case mainView
 }
