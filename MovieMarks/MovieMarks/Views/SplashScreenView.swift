@@ -24,15 +24,17 @@ struct SplashScreenView: View {
                         .offset(y: logoPosition)
                         .onAppear {
                             logoPosition = (geometry.size.height / 2) - (LogoConstants.logoHeight / 2) - geometry.safeAreaInsets.top
-                            withAnimation(.easeIn(duration: 1.0)) {
-                                logoPosition = 32 - geometry.safeAreaInsets.top
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                withAnimation(.easeIn(duration: 1.0)) {
+                                    logoPosition = 32 - geometry.safeAreaInsets.top
+                                }
                             }
                         }
                 }
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
                 withAnimation {
                     viewRouter.currentPage = .getStarted
                 }
