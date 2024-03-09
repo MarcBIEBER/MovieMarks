@@ -14,10 +14,13 @@ struct ContentView: View {
         switch viewRouter.currentPage {
         case .splashScreen:
             SplashScreenView()
+                .environmentObject(viewRouter)
         case .getStarted:
             GetStartedView()
+                .environmentObject(viewRouter)
         case .mainView:
             MainView()
+                .environmentObject(viewRouter)
         }
     }
 }

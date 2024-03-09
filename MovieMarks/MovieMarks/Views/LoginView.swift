@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
     @State private var username: String = ""
     @State private var password: String = ""
     
@@ -65,14 +66,25 @@ private extension LoginView {
     
     // Bouton de connexion
     var signInButton: some View {
-        NavigationLink(destination: MainView()) {
-            Text("Sign In")
+//        NavigationLink(destination: MainView()) {
+//            Text("Sign In")
+//        }
+//        .frame(maxWidth: .infinity, minHeight: 48.0)
+//        .background(Color("main"))
+//        .cornerRadius(12)
+//        .padding(.horizontal, 24)
+//        .foregroundColor(Color("ButtonForground"))
+//        
+        Button(action: {
+            viewRouter.currentPage = .mainView
+        }) {
+            Text("Create Account")
+                .foregroundColor(Color("ButtonForground"))
         }
-        .frame(maxWidth: .infinity, minHeight: 48.0)
+        .frame(maxWidth: .infinity, minHeight: 48)
         .background(Color("main"))
         .cornerRadius(12)
         .padding(.horizontal, 24)
-        .foregroundColor(Color("ButtonForground"))
         
     }
     

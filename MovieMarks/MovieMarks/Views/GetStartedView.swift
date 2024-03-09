@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GetStartedView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -44,7 +46,7 @@ struct GetStartedView: View {
                     Spacer()
                     
                     Button(action: {}) {
-                        NavigationLink(destination: RegisterView()){
+                        NavigationLink(destination: RegisterView().environmentObject(viewRouter)){
                             Text("Get started")
                                 .foregroundColor(Color("ButtonForground"))
                                 .frame(maxWidth: .infinity, minHeight: 48)
@@ -57,7 +59,7 @@ struct GetStartedView: View {
                     Spacer()
                     
                     Button(action: {}) {
-                        NavigationLink(destination: LoginView()){
+                        NavigationLink(destination: LoginView().environmentObject(viewRouter)){
                             Text("Login")
                                 .foregroundColor(Color("TextColor"))
                         }
