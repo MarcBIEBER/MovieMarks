@@ -16,29 +16,26 @@ struct MainView: View {
         VStack {
             headerView
             NavigationStack {
-                List($film) { $film in
-                    NavigationLink(destination: DetailView(film: $film)) {
-                        CardView(film: film)
+                GeometryReader { geometry in
+                    ScrollView {
+                        ForEach($film) { $film in
+                            NavigationLink(destination: DetailView(film: $film)) {
+                                CardView(film: film)
+                                    .background(Color("BackgroundColor1"))
+                                    .cornerRadius(12)
+                                    .padding()
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                                    .shadow(radius: 1)
+                            }
+                        }
                     }
-//                    .background(Color("BackgroundColor1"))
+                    .onChange(of: scenePhase) { phase in
+                        if phase == .inactive { saveAction() }
+                    }
                 }
-                .navigationTitle("Film")
-//                .toolbar {
-//                    Button(action: {
-//                        isPresentingNewFilmView = true
-//                    }) {
-//                        Image(systemName: "plus")
-//                    }
-//                    .accessibilityLabel("New film")
-//                }
-            }
-            .sheet(isPresented: $isPresentingNewFilmView) {
-//                NewScrumSheet(film: film, isPresentingNewFilmView: $isPresentingNewFilmView)
-            }
-            .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveAction() }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -72,5 +69,16 @@ private extension MainView {
         .frame(height: 100)
         .padding()
         .background(Color("BackgroundColor1"))
+        .shadow(radius: 1)
     }
 }
+
+struct MainView_Previews: PreviewProvider {
+    
+    @State static var films: [Film] = Film.sampleData
+    
+    static var previews: some View {
+        MainView(film: $films, saveAction: {})
+    }
+}
+

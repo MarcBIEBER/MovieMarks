@@ -9,29 +9,52 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var film: Film
-    @State private var editingScrum = Film.emptyFilm
-    
-    @State private var isPresentingEditView = false
     
     var body: some View {
-        Spacer()
-        // TODO: Faire un jolie composant avec l'image et les reviews et le genre du film comme sur figma
-        AsyncImage(url: URL(string: film.imageURL)) { image in
-            image
-                .resizable()
-                .scaledToFit()
-        } placeholder: {
-            ProgressView()
+        ScrollView {
+            VStack {
+                // TODO: Faire un jolie composant avec l'image et les reviews et le genre du film comme sur figma
+                AsyncImage(url: URL(string: film.imageURL)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .cornerRadius(12)
+                        .padding()
+                        .frame(maxHeight: 300)
+                        .clipped()
+                } placeholder: {
+                    ProgressView()
+                }
+                
+                Divider()
+                    .padding()
+                NavigationLink(destination: ReviewView(film: $film)) {
+                    // TODO: Crée un jolie composant pour acceder au review
+                    Text("Review")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                Divider()
+                    .padding()
+                VStack(alignment: .leading) {
+                    Text("Synopsis")
+                        .foregroundColor(Color("main"))
+                    Text(film.synopsis)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                Spacer()
+                    .navigationTitle(film.title)
+            }
         }
-        Spacer()
-        NavigationLink(destination: ReviewView(film: $film)) {
-            // TODO: Crée un jolie composant pour acceder au review
-            Text("Review")
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    @State static var film = Film.sampleData[0]
+    static var previews: some View {
+        NavigationView {
+            DetailView(film: $film)
         }
-        Text("Synopsis")
-            .foregroundColor(Color("main"))
-        Text(film.synopsis)
-        Spacer()
-            .navigationTitle(film.title)
     }
 }
