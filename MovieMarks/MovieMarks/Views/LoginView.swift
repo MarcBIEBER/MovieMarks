@@ -78,7 +78,7 @@ private extension LoginView {
         Button(action: {
             viewRouter.currentPage = .mainView
         }) {
-            Text("Create Account")
+            Text("Login")
                 .foregroundColor(Color("ButtonForground"))
         }
         .frame(maxWidth: .infinity, minHeight: 48)

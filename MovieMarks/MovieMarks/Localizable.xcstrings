@@ -1,0 +1,166 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " Movies\nwatching companion app." : {
+
+    },
+    " Privacy Policy" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Politique de confidentialité"
+          }
+        }
+      }
+    },
+    "Already have an account?" : {
+
+    },
+    "and" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "et"
+          }
+        }
+      }
+    },
+    "By logging in you agree to our " : {
+
+    },
+    "Click to have the films details" : {
+
+    },
+    "Confirm Password" : {
+
+    },
+    "Create Account" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer un compte"
+          }
+        }
+      }
+    },
+    "createAcc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Account"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer un compte"
+          }
+        }
+      }
+    },
+    "Don't have an account?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous n'avez pas de compte ?"
+          }
+        }
+      }
+    },
+    "Easily rate movies on a scale from 1 to 5 stars and jot down your thoughts with personalized reviews." : {
+
+    },
+    "Email" : {
+
+    },
+    "Email or Username" : {
+
+    },
+    "Film" : {
+
+    },
+    "Forget password ?" : {
+
+    },
+    "Get started" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "Home" : {
+
+    },
+    "Login" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connection"
+          }
+        }
+      }
+    },
+    "Or sign up" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ou se connecter"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mot de passe"
+          }
+        }
+      }
+    },
+    "Register" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'inscrire"
+          }
+        }
+      }
+    },
+    "Register now and start exploring all that our app has to offer. We’re excited to welcome you to our community!" : {
+
+    },
+    "Review" : {
+
+    },
+    "Series" : {
+
+    },
+    "Sign in" : {
+
+    },
+    "Synopsis" : {
+
+    },
+    "Terms & Conditions " : {
+
+    },
+    "Ultimate" : {
+
+    },
+    "Your " : {
+
+    }
+  },
+  "version" : "1.0"
+}

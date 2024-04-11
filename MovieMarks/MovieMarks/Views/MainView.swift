@@ -8,10 +8,36 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var film: [Film]
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var isPresentingNewFilmView = false
+    let saveAction: ()->Void
     var body: some View {
         VStack {
             headerView
-            Spacer()
+            NavigationStack {
+                List($film) { $film in
+                    NavigationLink(destination: DetailView(film: $film)) {
+                        CardView(film: film)
+                    }
+//                    .background(Color("BackgroundColor1"))
+                }
+                .navigationTitle("Film")
+//                .toolbar {
+//                    Button(action: {
+//                        isPresentingNewFilmView = true
+//                    }) {
+//                        Image(systemName: "plus")
+//                    }
+//                    .accessibilityLabel("New film")
+//                }
+            }
+            .sheet(isPresented: $isPresentingNewFilmView) {
+//                NewScrumSheet(film: film, isPresentingNewFilmView: $isPresentingNewFilmView)
+            }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
+            }
         }
     }
 }
@@ -47,10 +73,4 @@ private extension MainView {
         .padding()
         .background(Color("BackgroundColor1"))
     }
-    
-    
-}
-
-#Preview {
-    MainView()
 }

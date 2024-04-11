@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @StateObject private var store = FilmStore()
+    @State var sampleData = Film.sampleData
 
     var body: some View {
         switch viewRouter.currentPage {
@@ -19,8 +21,26 @@ struct ContentView: View {
             GetStartedView()
                 .environmentObject(viewRouter)
         case .mainView:
-            MainView()
-                .environmentObject(viewRouter)
+//            MainView()
+//                .environmentObject(viewRouter)
+//            MainView(film: $store.film) {
+            MainView(film: $sampleData) {
+                Task {
+                    do {
+                        try await store.save(film: store.film)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .environmentObject(viewRouter)
+            .task {
+                do {
+                    try await store.load()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
     }
 }
