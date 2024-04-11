@@ -72,7 +72,9 @@ extension Film {
 extension Film {
     static let sampleData: [Film] =
     [
-        Film(title: "Superman", synopsis: "C'est un super Hero", lengthInMinutes: 135,
+        Film(title: "Superman",
+             synopsis: "Just before the destruction of the planet Krypton, scientist Jor-El (Marlon Brando) sends his infant son Kal-El on a spaceship to Earth. Raised by kindly farmers Jonathan (Glenn Ford) and Martha Kent (Phyllis Thaxter), young Clark (Christopher Reeve) discovers the source of his superhuman powers and moves to Metropolis to fight evil. As Superman, he battles the villainous Lex Luthor (Gene Hackman), while, as novice reporter Clark Kent, he attempts to woo co-worker Lois Lane (Margot Kidder).",
+             lengthInMinutes: 135,
              type: [
                 "Horreur",
                 "Romance"
@@ -82,7 +84,9 @@ extension Film {
                 Review(name: "John", rate: 3, comment: "Super filme", date: Date.now),
                 Review(name: "Léa", rate: 1, comment: "Je recommande vivement", date: Date.now)
              ]),
-        Film(title: "Batman", synopsis: "C'est un super Hero", lengthInMinutes: 138,
+        Film(title: "Batman",
+             synopsis: "Batman ventures into Gotham City's underworld when a sadistic killer leaves behind a trail of cryptic clues. As the evidence begins to lead closer to home and the scale of the perpetrator's plans become clear, he must forge new relationships, unmask the culprit and bring justice to the abuse of power and corruption that has long plagued the metropolis.",
+             lengthInMinutes: 138,
              type: [
                 "Romance"
              ],
@@ -91,7 +95,9 @@ extension Film {
                 Review(name: "John", rate: 3, comment: "Super filme", date: Date.now),
                 Review(name: "Léa", rate: 5, comment: "Je recommande vivement", date: Date.now)
              ]),
-        Film(title: "Joker", synopsis: "C'est un super Vilain", lengthInMinutes: 120,
+        Film(title: "Joker",
+             synopsis: "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.",
+             lengthInMinutes: 120,
              type: [
                 "Action"
              ],
