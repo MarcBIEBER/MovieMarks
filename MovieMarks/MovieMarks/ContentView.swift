@@ -21,30 +21,8 @@ struct ContentView: View {
             GetStartedView()
                 .environmentObject(viewRouter)
         case .mainView:
-//            MainView()
-//                .environmentObject(viewRouter)
-//            MainView(film: $store.film) {
-            MainView(film: $sampleData) {
-                Task {
-                    do {
-                        try await store.save(film: store.film)
-                    } catch {
-                        fatalError(error.localizedDescription)
-                    }
-                }
-            }
-            .environmentObject(viewRouter)
-            .task {
-                do {
-                    try await store.load()
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
-            }
+            MainView(films: $sampleData)
+                .environmentObject(viewRouter)
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

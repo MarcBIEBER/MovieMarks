@@ -8,65 +8,64 @@
 import SwiftUI
 
 struct MainView: View {
-    @Binding var film: [Film]
+    @Binding var films: [Film]
     @Environment(\.scenePhase) private var scenePhase
-    @State private var isPresentingNewFilmView = false
-    let saveAction: ()->Void
+    
+    @State private var showSheet = false
+    @State private var selectedFilmIndex: Int? = nil
+    @State private var selectedFilm: Film? = nil
     var body: some View {
         VStack {
             headerView
-            NavigationStack {
-                GeometryReader { geometry in
-                    ScrollView {
-                        ForEach($film) { $film in
-                            NavigationLink(destination: DetailView(film: $film)) {
-                                CardView(film: film)
-                                    .background(Color("BackgroundColor1"))
-                                    .cornerRadius(12)
-                                    .padding()
-                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
-                                    .shadow(radius: 1)
+            GeometryReader { geometry in
+                ScrollView {
+                    ForEach(films.indices, id: \.self) { index in
+                        CardView(film: films[index])
+                            .background(Color("BackgroundColor1"))
+                            .cornerRadius(12)
+                            .padding()
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                            .shadow(radius: 1)
+                            .onTapGesture {
+                                selectedFilm = films[index]
                             }
-                        }
-                    }
-                    .onChange(of: scenePhase) { phase in
-                        if phase == .inactive { saveAction() }
                     }
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .sheet(item: $selectedFilm, onDismiss: {
+                    selectedFilm = nil
+                }) { film in
+                    DetailView(film: $films[films.firstIndex(where: { $0.id == film.id })!])
+                }
     }
 }
 
 private extension MainView {
     // Vue pour le header
     var headerView: some View {
-        VStack {
-            HStack {
+        HStack {
+            VStack(alignment: .leading) {
                 Text("Home")
                 Spacer()
-                Image(systemName: "person.fill")
+                HStack {
+                    Text("Film")
+                        .padding(.horizontal)
+                        .background(Color("main"))
+                        .cornerRadius(12)
+                    Text("Series")
+                        .padding(.horizontal)
+                        .background(Color("TextFieldBG"))
+                        .cornerRadius(12)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
-            HStack {
-                Text("Click to have the films details")
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                Text("Film")
-                    .padding(.horizontal)
-                    .background(Color("main"))
-                    .cornerRadius(12)
-                Text("Series")
-                    .padding(.horizontal)
-                    .background(Color("TextFieldBG"))
-                    .cornerRadius(12)
-                Spacer()
-            }
+            Image(systemName: "person.fill")
         }
-        .frame(height: 100)
+        .frame(height: 50)
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         .padding()
         .background(Color("BackgroundColor1"))
         .shadow(radius: 1)
@@ -78,7 +77,7 @@ struct MainView_Previews: PreviewProvider {
     @State static var films: [Film] = Film.sampleData
     
     static var previews: some View {
-        MainView(film: $films, saveAction: {})
+        MainView(films: $films)
     }
 }
 
