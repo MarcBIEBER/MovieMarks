@@ -9,13 +9,27 @@ import SwiftUI
 
 struct StarRatingView: View {
     var rating: Double
-    var maximumRating = 5
-    var onColor = Color("main")
-    var offColor = Color("main")
-    var fullStarImage = "star.fill"
-    var halfStarImage = "star.leadinghalf.filled"
-    var emptyStarImage = "star"
-    var size: CGFloat = 20
+    var maximumRating: Int
+    var onColor: Color
+    var offColor: Color
+    var fullStarImage: String
+    var halfStarImage: String
+    var emptyStarImage: String
+    var size: CGFloat
+
+    init(rating: Double, maximumRating: Int = 5,
+         onColor: Color = Color("main"), offColor: Color = Color("main"),
+         fullStarImage: String = "star.fill", halfStarImage: String = "star.leadinghalf.filled",
+         emptyStarImage: String = "star", size: CGFloat = 20) {
+        self.rating = rating
+        self.maximumRating = maximumRating
+        self.onColor = onColor
+        self.offColor = offColor
+        self.fullStarImage = fullStarImage
+        self.halfStarImage = halfStarImage
+        self.emptyStarImage = emptyStarImage
+        self.size = size
+    }
     
     private func starType(for position: Int) -> String {
             let currentRating = Double(position)

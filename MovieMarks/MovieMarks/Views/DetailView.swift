@@ -61,8 +61,8 @@ struct DetailView: View {
                     
                     Divider()
                         .padding([.leading, .trailing])
+                    
                     NavigationLink(destination: ReviewView(film: $film)) {
-                        // TODO: Crée un jolie composant pour acceder au review
                         HStack {
                             VStack(alignment: .leading) {
                                 Text("See the review")

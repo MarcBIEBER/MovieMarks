@@ -14,6 +14,12 @@
         }
       }
     },
+    "(%lld Reviews)" : {
+
+    },
+    "%lld stars" : {
+
+    },
     "Already have an account?" : {
 
     },
@@ -86,9 +92,6 @@
 
     },
     "Get started" : {
-
-    },
-    "Hello, World!" : {
 
     },
     "Home" : {
