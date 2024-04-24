@@ -13,8 +13,7 @@ struct EditableStarRatingView: View {
     var onColor: Color = Color("main")
     var offColor: Color = .gray
     var size: CGFloat = 44
-
-    // Helper function to determine star image
+    
     private func starImage(for index: Int) -> String {
         if index <= Int(rating) {
             return "star.fill"
@@ -22,7 +21,7 @@ struct EditableStarRatingView: View {
             return "star"
         }
     }
-
+    
     var body: some View {
         HStack {
             ForEach(1...maximumRating, id: \.self) { number in
@@ -55,7 +54,8 @@ struct AddReviewView: View {
                 .frame(height: 100)
             
             Button("Send") {
-                // Handle submission logic here
+                sendNotification(rating: Int(rating), reviewText: reviewText)
+                
             }
             .padding()
             .background(Color("main"))
@@ -65,8 +65,26 @@ struct AddReviewView: View {
         .padding()
         Spacer()
     }
+    
+    func sendNotification(rating: Int, reviewText: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "New Review Submitted"
+        content.body = "Rating: \(rating) stars\nReview: \(reviewText)"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Erreur lors de l'ajout de la notification: \(error)")
+            }
+            print(error as Any)
+        }
+    }
 }
-
-#Preview {
-    AddReviewView()
-}
+//
+//#Preview {
+//    AddReviewView()
+//}
