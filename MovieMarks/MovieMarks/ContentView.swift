@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var themeSettings: ThemeSettings
     @EnvironmentObject var viewRouter: ViewRouter
     @StateObject private var store = FilmStore()
     @State var sampleData = Film.sampleData

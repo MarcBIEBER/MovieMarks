@@ -25,6 +25,7 @@
 		66D9EE092BC75A26009E33F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE082BC75A26009E33F7 /* CardView.swift */; };
 		66D9EE0B2BC75A6D009E33F7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE0A2BC75A6D009E33F7 /* DetailView.swift */; };
 		66D9EE0D2BC760CB009E33F7 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */; };
+		9CEF94FF2BCB66F700C8ADFE /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF94FE2BCB66F700C8ADFE /* ProfilView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		66D9EE082BC75A26009E33F7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		66D9EE0A2BC75A6D009E33F7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		9CEF94FE2BCB66F700C8ADFE /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				66D9EE0A2BC75A6D009E33F7 /* DetailView.swift */,
 				66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */,
 				66D0C8D82BC89CEA009E58AD /* StarRatingView.swift */,
+				9CEF94FE2BCB66F700C8ADFE /* ProfilView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				66D9EE072BC758E2009E33F7 /* FilmStore.swift in Sources */,
 				666E85862B9967A500CE5790 /* ContentView.swift in Sources */,
+				9CEF94FF2BCB66F700C8ADFE /* ProfilView.swift in Sources */,
 				666E85842B9967A500CE5790 /* MovieMarksApp.swift in Sources */,
 				666E85972B9976DE00CE5790 /* SplashScreenView.swift in Sources */,
 				664DB04D2B9A7D09001CF5DA /* MainView.swift in Sources */,

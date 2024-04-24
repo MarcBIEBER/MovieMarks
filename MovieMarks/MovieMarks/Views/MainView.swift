@@ -11,7 +11,7 @@ struct MainView: View {
     @Binding var films: [Film]
     @Environment(\.scenePhase) private var scenePhase
     
-    @State private var showSheet = false
+    @State private var showprofil = false
     @State private var selectedFilmIndex: Int? = nil
     @State private var selectedFilm: Film? = nil
     var body: some View {
@@ -39,6 +39,9 @@ struct MainView: View {
                 }) { film in
                     DetailView(film: $films[films.firstIndex(where: { $0.id == film.id })!])
                 }
+                .sheet(isPresented: $showprofil, content: {
+                        ProfilView()
+                })
     }
 }
 
@@ -63,6 +66,10 @@ private extension MainView {
             .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
             Image(systemName: "person.fill")
+                .onTapGesture{
+                    showprofil = true
+                }
+
         }
         .frame(height: 50)
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
