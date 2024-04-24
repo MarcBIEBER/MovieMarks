@@ -115,7 +115,9 @@ struct RegisterView: View {
 private extension RegisterView {
     func register(username: String, password: String) {
         print("register called")
-        user.append(User(username: username, password: password))
+        var newUser = User(username: username, password: password)
+        newUser.login()
+        user.append(newUser)
     }
 }
 
