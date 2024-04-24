@@ -8,7 +8,7 @@
 import Foundation
 
 class ViewRouter: ObservableObject {
-    @Published var currentPage: Page = .mainView // TODO: replace with splashScreen
+    @Published var currentPage: Page = .getStarted // TODO: replace with splashScreen
 }
 
 enum Page {

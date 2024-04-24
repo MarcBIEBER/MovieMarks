@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Binding var user: [User]
     @EnvironmentObject var viewRouter: ViewRouter
+    @Environment(\.scenePhase) private var scenePhase
     @State private var username: String = ""
     @State private var password: String = ""
-    
+    let saveAction: ()->Void
+
     var body: some View {
         VStack(alignment: .center) {
             logoView
@@ -26,6 +29,9 @@ struct LoginView: View {
                 .padding(.bottom, 24)
         }
         .background(Color("BackgroundColor1"))
+        .onChange(of: scenePhase) {
+            if scenePhase == .inactive { saveAction() }
+        }
     }
 }
 
@@ -66,6 +72,7 @@ private extension LoginView {
     
     // Bouton de connexion
     var signInButton: some View {
+        
 //        NavigationLink(destination: MainView()) {
 //            Text("Sign In")
 //        }
@@ -76,7 +83,9 @@ private extension LoginView {
 //        .foregroundColor(Color("ButtonForground"))
 //        
         Button(action: {
-            viewRouter.currentPage = .mainView
+            if loginUser(username: username, password: password) == true {
+                viewRouter.currentPage = .mainView
+            }
         }) {
             Text("Login")
                 .foregroundColor(Color("ButtonForground"))
@@ -106,7 +115,7 @@ private extension LoginView {
     var registerView: some View {
         HStack {
             Text("Don't have an account?")
-            NavigationLink(destination: RegisterView()) {
+            NavigationLink(destination: RegisterView(user: $user, saveAction: saveAction)) {
                 Text("Register").foregroundColor(Color("main"))
             }
         }
@@ -144,7 +153,23 @@ private extension View {
     }
 }
 
-
-#Preview {
-    LoginView()
+private extension LoginView {
+    func loginUser(username: String, password: String) -> Bool {
+        print("login user function called !")
+        print(username, password)
+        if let index = user.firstIndex(where: { $0.username == username && $0.password == password }) {
+            user[index].login()
+            return true
+        } else {
+            return false
+        }
+    }
 }
+
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User.sampleData
+//        return LoginView(user: .constant(user))
+//    }
+//}
+

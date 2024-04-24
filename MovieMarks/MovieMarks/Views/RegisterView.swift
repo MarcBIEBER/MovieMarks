@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @Binding var user: [User]
     @EnvironmentObject var viewRouter: ViewRouter
+    @Environment(\.scenePhase) private var scenePhase
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var passwordConfirm: String = ""
+    let saveAction: ()->Void
+
     var body: some View {
         ZStack {
             Color("BackgroundColor1")
@@ -60,6 +64,7 @@ struct RegisterView: View {
                     .padding(.horizontal, 24)
                 
                 Button(action: {
+                    register(username: email, password: password)
                     viewRouter.currentPage = .mainView
                 }) {
                     Text("Create Account")
@@ -94,15 +99,29 @@ struct RegisterView: View {
                 HStack {
                     Text("Already have an account?")
                         .foregroundColor(Color("TextColor"))
-                    NavigationLink("Sign in", destination: LoginView())
+                    NavigationLink("Sign in", destination: LoginView(user: $user, saveAction: saveAction))
                         .foregroundColor(Color("main"))
                 }
                 .padding()
             }
+            .onChange(of: viewRouter.currentPage) {
+                saveAction()
+            }
         }
+
     }
 }
 
-//#Preview {
-//    RegisterView()
-//}
+private extension RegisterView {
+    func register(username: String, password: String) {
+        print("register called")
+        user.append(User(username: username, password: password))
+    }
+}
+
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        let user = User.sampleData
+        return RegisterView(user: .constant(user), saveAction: {})
+    }
+}
