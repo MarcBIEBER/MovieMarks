@@ -26,6 +26,7 @@
 		66D9EE092BC75A26009E33F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE082BC75A26009E33F7 /* CardView.swift */; };
 		66D9EE0B2BC75A6D009E33F7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE0A2BC75A6D009E33F7 /* DetailView.swift */; };
 		66D9EE0D2BC760CB009E33F7 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */; };
+		66E1B08A2BD98A2B001EE5B5 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E1B0892BD98A2B001EE5B5 /* AddReviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		66D9EE082BC75A26009E33F7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		66D9EE0A2BC75A6D009E33F7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		66E1B0892BD98A2B001EE5B5 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				66D9EE0C2BC760CB009E33F7 /* ReviewView.swift */,
 				66D0C8D82BC89CEA009E58AD /* StarRatingView.swift */,
 				6688ACB02BCCA29000E6DE18 /* ReviewDetailsView.swift */,
+				66E1B0892BD98A2B001EE5B5 /* AddReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				666E85972B9976DE00CE5790 /* SplashScreenView.swift in Sources */,
 				664DB04D2B9A7D09001CF5DA /* MainView.swift in Sources */,
 				664DB04B2B9A7BAA001CF5DA /* LoginView.swift in Sources */,
+				66E1B08A2BD98A2B001EE5B5 /* AddReviewView.swift in Sources */,
 				6688ACB12BCCA29000E6DE18 /* ReviewDetailsView.swift in Sources */,
 				66D9EE0D2BC760CB009E33F7 /* ReviewView.swift in Sources */,
 				66D9EE032BC7541F009E33F7 /* Film.swift in Sources */,

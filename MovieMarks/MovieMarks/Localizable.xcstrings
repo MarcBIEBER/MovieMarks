@@ -20,6 +20,9 @@
     "%lld stars" : {
 
     },
+    "Add your own review !" : {
+
+    },
     "Already have an account?" : {
 
     },
@@ -143,6 +146,9 @@
     "See the review" : {
 
     },
+    "Send" : {
+
+    },
     "Series" : {
 
     },
@@ -158,10 +164,16 @@
     "Ultimate" : {
 
     },
+    "Write something here..." : {
+
+    },
     "You can write your own review" : {
 
     },
     "Your " : {
+
+    },
+    "Your review:" : {
 
     }
   },
