@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    @Binding var user: [User]
     @EnvironmentObject var viewRouter: ViewRouter
     @State private var logoPosition = 0.0
     
@@ -36,10 +37,22 @@ struct SplashScreenView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
                 withAnimation {
-                    viewRouter.currentPage = .getStarted
+                    if (checkIfUserLogin() == true) {
+                        viewRouter.currentPage = .mainView
+                    } else {
+                        viewRouter.currentPage = .getStarted
+                    }
                 }
             }
         }
     }
 }
 
+private extension SplashScreenView {
+    func checkIfUserLogin() -> Bool {
+        return user.contains { singleUser in
+            print(singleUser)
+            return singleUser.isLogin == true
+        }
+    }
+}

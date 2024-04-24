@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var user: [User]
     @Binding var films: [Film]
     @Environment(\.scenePhase) private var scenePhase
-    
     @State private var showprofil = false
     @State private var selectedFilmIndex: Int? = nil
     @State private var selectedFilm: Film? = nil
+    let saveAction: ()->Void
+    
     var body: some View {
         VStack {
             headerView
@@ -40,7 +42,7 @@ struct MainView: View {
                     DetailView(film: $films[films.firstIndex(where: { $0.id == film.id })!])
                 }
                 .sheet(isPresented: $showprofil, content: {
-                        ProfilView()
+                    ProfilView(user: $user, saveAction: saveAction)
                 })
     }
 }
@@ -81,12 +83,12 @@ private extension MainView {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    
-    @State static var films: [Film] = Film.sampleData
-    
-    static var previews: some View {
-        MainView(films: $films)
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    
+//    @State static var films: [Film] = Film.sampleData
+//    
+//    static var previews: some View {
+//        MainView(films: $films)
+//    }
+//}
 

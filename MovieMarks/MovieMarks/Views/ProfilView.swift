@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ProfilView: View {
+    @Binding var user: [User]
+    @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject var themeSettings: ThemeSettings
+    @EnvironmentObject var viewRouter: ViewRouter
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false // Define isDarkMode directly
     @State private var selectedLanguageIndex = 0
     let languages = ["English", "French"]
+    let saveAction: ()->Void
     
     var body: some View {
         NavigationView {
@@ -37,7 +41,9 @@ struct ProfilView: View {
                 
                 Section {
                     Button(action: {
-                        // Perform logout action here
+                        if logoutUser() == true {
+                            viewRouter.currentPage = .getStarted
+                        }
                     }) {
                         Text("Log out")
                             .foregroundColor(Color("ButtonForground"))
@@ -53,9 +59,24 @@ struct ProfilView: View {
         }
         .onAppear {
         }
+        .onChange(of: viewRouter.currentPage) {
+            saveAction()
+        }
     }
 }
 
-#Preview {
-    ProfilView()
+private extension ProfilView {
+    func logoutUser() -> Bool {
+        if let index = user.firstIndex(where: { $0.isLogin == true }) {
+            print(user[index])
+            user[index].logout()
+            print(user[index])
+            return true
+        } else {
+            return false
+        }
+    }
 }
+//#Preview {
+//    ProfilView()
+//}

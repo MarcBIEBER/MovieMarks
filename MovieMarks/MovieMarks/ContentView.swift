@@ -16,11 +16,17 @@ struct ContentView: View {
     @State var sampleUser = User.sampleData
 
     var body: some View {
-        //GetStartedView(user: $sampleUser)
         switch viewRouter.currentPage {
         case .splashScreen:
-            SplashScreenView()
+            SplashScreenView(user: $userStore.user)
                 .environmentObject(viewRouter)
+                .task {
+                    do {
+                        try await userStore.load()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
         case .getStarted:
             GetStartedView(user: $userStore.user) {
                 Task {
@@ -40,8 +46,23 @@ struct ContentView: View {
                     }
                 }
         case .mainView:
-            MainView(films: $sampleData)
+            MainView(user: $userStore.user, films: $sampleData) {
+                Task {
+                    do {
+                        try await userStore.save(user: userStore.user)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
                 .environmentObject(viewRouter)
+                .task {
+                    do {
+                        try await userStore.load()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
         }
     }
 }
