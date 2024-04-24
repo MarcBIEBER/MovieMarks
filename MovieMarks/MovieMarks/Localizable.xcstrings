@@ -101,6 +101,9 @@
         }
       }
     },
+    "Change App Language in System Settings" : {
+
+    },
     "Confirm Password" : {
       "localizations" : {
         "fr" : {

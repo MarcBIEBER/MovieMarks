@@ -29,8 +29,8 @@ struct LoginView: View {
                 .padding(.bottom, 24)
         }
         .background(Color("BackgroundColor1"))
-        .onChange(of: scenePhase) {
-            if scenePhase == .inactive { saveAction() }
+        .onChange(of: viewRouter.currentPage) {
+            saveAction()
         }
     }
 }
@@ -158,6 +158,7 @@ private extension LoginView {
         print("login user function called !")
         print(username, password)
         if let index = user.firstIndex(where: { $0.username == username && $0.password == password }) {
+            print(user[index])
             user[index].login()
             return true
         } else {

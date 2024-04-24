@@ -19,13 +19,17 @@ class OrientationManager: ObservableObject {
 }
 
 struct MainView: View {
+    @Binding var user: [User]
+    @Binding var films: [Film]
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var showprofil = false
     @ObservedObject var orientationManager = OrientationManager()
     @Binding var films: [Film]
     @Environment(\.scenePhase) private var scenePhase
-    
     @State private var selectedFilmIndex: Int? = nil
     @State private var showProfil = false
     @State private var selectedFilm: Film? = nil
+    let saveAction: ()->Void
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var scrollViewAxis: Axis.Set {
@@ -121,12 +125,12 @@ private extension MainView {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    
-    @State static var films: [Film] = Film.sampleData
-    
-    static var previews: some View {
-        MainView(films: $films)
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    
+//    @State static var films: [Film] = Film.sampleData
+//    
+//    static var previews: some View {
+//        MainView(films: $films)
+//    }
+//}
 
