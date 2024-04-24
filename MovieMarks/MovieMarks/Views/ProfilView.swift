@@ -27,13 +27,12 @@ struct ProfilView: View {
                     }
                 }
         
-                Section(header: Text("Language")) {
-                    Picker(selection: $selectedLanguageIndex, label: Text("Language")) {
-                        ForEach(0..<languages.count) { index in
-                            Text(self.languages[index])
+                Section {
+                    Button("Change App Language in System Settings") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section {
