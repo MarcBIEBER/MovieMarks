@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38C4EBE52BD7FA52002F4105 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C4EBE42BD7FA52002F4105 /* UserStore.swift */; };
+		38ED55EB2BD7F72200C4AA51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED55EA2BD7F72200C4AA51 /* User.swift */; };
 		664DB0452B9A6B92001CF5DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DB0442B9A6B92001CF5DA /* Router.swift */; };
 		664DB0472B9A6D3F001CF5DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DB0462B9A6D3F001CF5DA /* Constants.swift */; };
 		664DB0492B9A7BA1001CF5DA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DB0482B9A7BA1001CF5DA /* RegisterView.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38C4EBE42BD7FA52002F4105 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		38ED55EA2BD7F72200C4AA51 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		664DB0442B9A6B92001CF5DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		664DB0462B9A6D3F001CF5DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		664DB0482B9A7BA1001CF5DA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				664DB0462B9A6D3F001CF5DA /* Constants.swift */,
 				66D9EE022BC7541F009E33F7 /* Film.swift */,
 				66D9EE062BC758E2009E33F7 /* FilmStore.swift */,
+				38ED55EA2BD7F72200C4AA51 /* User.swift */,
+				38C4EBE42BD7FA52002F4105 /* UserStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,7 +220,9 @@
 				664DB04D2B9A7D09001CF5DA /* MainView.swift in Sources */,
 				664DB04B2B9A7BAA001CF5DA /* LoginView.swift in Sources */,
 				66E1B08A2BD98A2B001EE5B5 /* AddReviewView.swift in Sources */,
+				38C4EBE52BD7FA52002F4105 /* UserStore.swift in Sources */,
 				6688ACB12BCCA29000E6DE18 /* ReviewDetailsView.swift in Sources */,
+				38ED55EB2BD7F72200C4AA51 /* User.swift in Sources */,
 				66D9EE0D2BC760CB009E33F7 /* ReviewView.swift in Sources */,
 				66D9EE032BC7541F009E33F7 /* Film.swift in Sources */,
 				66D9EE0B2BC75A6D009E33F7 /* DetailView.swift in Sources */,

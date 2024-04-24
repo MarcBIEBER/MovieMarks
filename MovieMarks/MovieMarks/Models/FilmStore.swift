@@ -31,7 +31,7 @@ class FilmStore: ObservableObject {
         let film = try await task.value
         self.film = film
     }
-    
+
     func save(film: [Film]) async throws {
         let task = Task {
             let data = try JSONEncoder().encode(film)
