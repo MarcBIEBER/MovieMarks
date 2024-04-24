@@ -22,10 +22,8 @@ struct MainView: View {
     @Binding var user: [User]
     @Binding var films: [Film]
     @Environment(\.scenePhase) private var scenePhase
-    @State private var showprofil = false
     @ObservedObject var orientationManager = OrientationManager()
-    @Binding var films: [Film]
-    @Environment(\.scenePhase) private var scenePhase
+
     @State private var selectedFilmIndex: Int? = nil
     @State private var showProfil = false
     @State private var selectedFilm: Film? = nil
@@ -41,7 +39,6 @@ struct MainView: View {
                 headerView
                 GeometryReader { geometry in
                     if orientationManager.isPortrait {
-                        // ScrollView vertical en mode portrait
                         ScrollView(.vertical, showsIndicators: true) {
                             VStack {
                                 ForEach(films.indices, id: \.self) { index in
@@ -58,7 +55,6 @@ struct MainView: View {
                             }
                         }
                     } else {
-                        // ScrollView horizontal en mode paysage
                         ScrollView(.horizontal, showsIndicators: true) {
                             HStack {
                                 ForEach(films.indices, id: \.self) { index in
@@ -84,13 +80,12 @@ struct MainView: View {
                 DetailView(film: $films[films.firstIndex(where: { $0.id == film.id })!])
             }
             .sheet(isPresented: $showProfil, content: {
-                ProfilView()
+                ProfilView(user: $user, saveAction: saveAction)
             })
         }
 }
 
 private extension MainView {
-    // Vue pour le header
     var headerView: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -124,13 +119,3 @@ private extension MainView {
         .shadow(radius: 1)
     }
 }
-
-//struct MainView_Previews: PreviewProvider {
-//    
-//    @State static var films: [Film] = Film.sampleData
-//    
-//    static var previews: some View {
-//        MainView(films: $films)
-//    }
-//}
-

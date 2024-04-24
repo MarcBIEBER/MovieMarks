@@ -72,6 +72,7 @@
       }
     },
     "Appearance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -100,9 +101,6 @@
           }
         }
       }
-    },
-    "Change App Language in System Settings" : {
-
     },
     "Confirm Password" : {
       "localizations" : {
@@ -142,6 +140,7 @@
       }
     },
     "Dark Mode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {

@@ -10,9 +10,9 @@ import SwiftUI
 struct ProfilView: View {
     @Binding var user: [User]
     @Environment(\.scenePhase) private var scenePhase
-    @EnvironmentObject var themeSettings: ThemeSettings
+//    @EnvironmentObject var themeSettings: ThemeSettings
     @EnvironmentObject var viewRouter: ViewRouter
-    @AppStorage("isDarkMode") private var isDarkMode: Bool = false // Define isDarkMode directly
+//    @AppStorage("isDarkMode") private var isDarkMode: Bool = false // Define isDarkMode directly
     @State private var selectedLanguageIndex = 0
     let languages = ["English", "French"]
     let saveAction: ()->Void
@@ -21,15 +21,15 @@ struct ProfilView: View {
         NavigationView {
             
             Form {
-                Section(header: Text("Appearance")) {
-                    Toggle(isOn: $isDarkMode) {
-                        Text("Dark Mode")
-                    }
-                    .onChange(of: isDarkMode) { newValue in
-                        themeSettings.updateAppTheme()
-                        isDarkMode = newValue
-                    }
-                }
+//                Section(header: Text("Appearance")) {
+//                    Toggle(isOn: $isDarkMode) {
+//                        Text("Dark Mode")
+//                    }
+//                    .onChange(of: isDarkMode) { newValue in
+//                        themeSettings.updateAppTheme()
+//                        isDarkMode = newValue
+//                    }
+//                }
         
                 Section {
                     Button("Change App Language in System Settings") {
@@ -55,7 +55,7 @@ struct ProfilView: View {
                 }
             }
             .navigationBarTitle("Profile & Settings")
-            .preferredColorScheme(isDarkMode ? .dark : .light) // Set preferred color scheme based on isDarkMode
+//            .preferredColorScheme(isDarkMode ? .dark : .light) // Set preferred color scheme based on isDarkMode
         }
         .onAppear {
         }
