@@ -14,6 +14,15 @@
         }
       }
     },
+    "(%lld Reviews)" : {
+
+    },
+    "%lld stars" : {
+
+    },
+    "Add your own review !" : {
+
+    },
     "Already have an account?" : {
 
     },
@@ -94,9 +103,6 @@
     "Get started" : {
 
     },
-    "Hello, World!" : {
-
-    },
     "Home" : {
 
     },
@@ -155,6 +161,9 @@
     "See the review" : {
 
     },
+    "Send" : {
+
+    },
     "Series" : {
 
     },
@@ -170,10 +179,16 @@
     "Ultimate" : {
 
     },
+    "Write something here..." : {
+
+    },
     "You can write your own review" : {
 
     },
     "Your " : {
+
+    },
+    "Your review:" : {
 
     }
   },

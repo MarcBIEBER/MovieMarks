@@ -51,6 +51,8 @@ private extension MainView {
         HStack {
             VStack(alignment: .leading) {
                 Text("Home")
+                    .foregroundColor(Color("main"))
+                    .font(.system(size: 24, weight: .bold))
                 Spacer()
                 HStack {
                     Text("Film")
@@ -72,7 +74,7 @@ private extension MainView {
 
         }
         .frame(height: 50)
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .frame(maxWidth: .infinity)
         .padding()
         .background(Color("BackgroundColor1"))
         .shadow(radius: 1)

@@ -35,6 +35,24 @@ struct Film: Identifiable, Codable {
         }
     }
     
+    var ratingTab: [Int] {
+        
+        // Initialize the array to hold counts for each rating from 0 to 5
+        var ratingCounts = [Int](repeating: 0, count: 5)
+
+        for review in self.review {  // Assuming 'reviews' is a collection of review objects
+            if review.rate >= 1 && review.rate <= 5 {
+                // Adjust the index to be zero-based when accessing ratingCounts
+                ratingCounts[Int(review.rate) - 1] += 1
+            } else {
+                print("Invalid rating: \(review.rate). Ratings should be between 1 and 5.")
+            }
+        }
+        
+        return ratingCounts
+        
+    }
+    
     init(id: UUID = UUID(), title: String, synopsis: String, lengthInMinutes: Int, type: [String], imageURL: String, review: [Review]) {
         self.id = id
         self.title = title
@@ -54,6 +72,13 @@ extension Film {
         var rate: Int
         var comment: String
         var date: Date
+        
+        var dateStr: String {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            return formatter.string(from: date)
+        }
         
         init(id: UUID = UUID(), name: String, rate: Int, comment: String, date: Date) {
             self.id = id
@@ -112,7 +137,10 @@ extension Film {
                 "Action"
              ],
              imageURL: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/03/02/s0030-p0080-base-compo-comp-left.0108.jpg?width=1200",
-             review: []
+             review: [
+                Review(name: "Léa", rate: 1, comment: "Je recommande vivement", date: Date.now),
+                Review(name: "Jean", rate: 1, comment: "Je recommande vivement", date: Date.now)
+             ]
             )
     ]
 }
