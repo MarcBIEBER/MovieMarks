@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     " Movies\nwatching companion app." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Application de visionnage de films."
+          }
+        }
+      }
     },
     " Privacy Policy" : {
       "localizations" : {
@@ -15,16 +22,44 @@
       }
     },
     "(%lld Reviews)" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%lld Avis)"
+          }
+        }
+      }
     },
     "%lld stars" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld étoiles"
+          }
+        }
+      }
     },
     "Add your own review !" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter votre propre avis !"
+          }
+        }
+      }
     },
     "Already have an account?" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez déjà un compte?"
+          }
+        }
+      }
     },
     "and" : {
       "localizations" : {
@@ -37,13 +72,44 @@
       }
     },
     "Appearance" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
+          }
+        }
+      }
     },
     "By logging in you agree to our " : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En vous connectant vous acceptez nos "
+          }
+        }
+      }
+    },
+    "Change App Language in System Settings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier la langue de l'application dans les paramètres système"
+          }
+        }
+      }
     },
     "Confirm Password" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmer votre Mot de passe"
+          }
+        }
+      }
     },
     "Create Account" : {
       "localizations" : {
@@ -73,7 +139,14 @@
       }
     },
     "Dark Mode" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode sombre"
+          }
+        }
+      }
     },
     "Don't have an account?" : {
       "localizations" : {
@@ -86,38 +159,91 @@
       }
     },
     "Easily rate movies on a scale from 1 to 5 stars and jot down your thoughts with personalized reviews." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notez facilement les films sur une échelle de 1 à 5 étoiles et notez vos pensées avec des critiques personnalisées."
+          }
+        }
+      }
     },
     "Email" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
     },
     "Email or Username" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email ou nom d'utilisateur"
+          }
+        }
+      }
     },
     "Film" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Film"
+          }
+        }
+      }
     },
     "Forget password ?" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mot de passe oublié?"
+          }
+        }
+      }
     },
     "Get started" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'inscrire"
+          }
+        }
+      }
     },
     "Home" : {
-
-    },
-    "Language" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accueil"
+          }
+        }
+      }
     },
     "Log out" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déconnexion"
+          }
+        }
+      }
     },
     "Login" : {
       "localizations" : {
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Connection"
+            "value" : "Connexion"
           }
         }
       }
@@ -143,7 +269,14 @@
       }
     },
     "Profile & Settings" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil & Paramètres"
+          }
+        }
+      }
     },
     "Register" : {
       "localizations" : {
@@ -156,40 +289,124 @@
       }
     },
     "Register now and start exploring all that our app has to offer. We’re excited to welcome you to our community!" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inscrivez-vous maintenant et commencez à explorer tout ce que notre application a à offrir. Nous sommes impatients de vous accueillir dans notre communauté !"
+          }
+        }
+      }
     },
     "See the review" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les avis"
+          }
+        }
+      }
     },
     "Send" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer"
+          }
+        }
+      }
     },
     "Series" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séries"
+          }
+        }
+      }
     },
     "Sign in" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'inscrire"
+          }
+        }
+      }
     },
     "Synopsis" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synopsis"
+          }
+        }
+      }
     },
     "Terms & Conditions " : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termes & Conditions "
+          }
+        }
+      }
     },
     "Ultimate" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Ultime "
+          }
+        }
+      }
     },
     "Write something here..." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrivez quelque chose ici"
+          }
+        }
+      }
     },
     "You can write your own review" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez écrire votre propre avis"
+          }
+        }
+      }
     },
     "Your " : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre"
+          }
+        }
+      }
     },
     "Your review:" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre avis:"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
